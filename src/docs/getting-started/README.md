@@ -1,27 +1,27 @@
 # Getting started with Orchard Core as a NuGet package
 
-In this article, we are going to see how easy it is to create a CMS Web application using the NuGet packages provided by Orchard Core.
+在本文中，我们将看到使用 Orchard Core 提供的 NuGet 包创建 CMS Web 应用程序是多么容易。
 
-You can find the original blog post written by Chris Payne here:  
+你可以在这里找到 Chris Payne 最初的博客文章:  
 <http://ideliverable.com/blog/getting-started-with-orchard-core-as-a-nuget-package>
 
-## Create an Orchard Core CMS application
+## 创建一个 Orchard Core CMS 应用程序
 
-In Visual Studio, create a new empty .NET Core web application. Ex: `Cms.Web`.
+在 Visual Studio 中，创建一个新的空 .NET Core web 应用程序。例: `Cms.Web`。
 
-If you want to use the `dev` packages, add this OrchardCore-preview MyGet url to your NuGet sources:  
+如果你想使用 `dev` 包，添加这个 OrchardCore-preview MyGet url 到你的 NuGet 源:  
 <https://www.myget.org/F/orchardcore-preview/api/v3/index.json>
 
-Right-click on the project and click on `Manage NuGet packages...`.
-In the `Browse` tab, search for `OrchardCore.Application.Cms.Targets` and `Install` the package.
+右键单击项目，然后单击 `Manage NuGet packages...`。
+在 `Browse` 选项卡中，搜索 `OrchardCore.Application.Cms.Targets` 并 `Install` 包。
 
-Open `Startup.cs` and modify the `ConfigureServices` method by adding this line:
+打开 `Startup.cs` 并修改 `ConfigureServices` 方法，添加这一行:
 
 ```csharp
 services.AddOrchardCms();
 ```
 
-In the `Configure` method, replace this block:
+在 `Configure` 方法中，替换这个代码块:
 
 ```csharp
 app.Run(async (context) =>
@@ -30,19 +30,19 @@ app.Run(async (context) =>
 });
 ```
 
-with this line:
+使用这一行:
 
 ```csharp
 app.UseOrchardCore();
 ```
 
-Add a `wwwroot` folder to your project
+添加一个 `wwwroot` 文件夹到你的项目
 
 ## Setup your application
 
-Launch your application (Ctrl+F5). The setup page is displayed.
+启动你的应用程序 (Ctrl+F5)。将显示安装界面。
 
-Enter the required information about the site:
+输入关于网站的所需资料:
 
 - The name of the site. Ex: `Orchard Core`.
 - The theme recipe to use. Ex: `Agency`.
@@ -52,6 +52,6 @@ Enter the required information about the site:
 - The email of the admin. Ex: `foo@bar.com`
 - The password and the password confirmation.
 
-Submit the form and your site is generated after a few seconds.
+提交表单，你的站点几秒钟后就会生成。
 
-Then, you can access to the admin using the `/admin` url. Enjoy.
+然后，你可以使用 `/admin` url 访问 admin。享受它。

@@ -1,12 +1,7 @@
-Contributors
+贡献者
 --------------
-This is the official list of the Orchard project contributors.
-Names of the original copyright holders (individuals or organizations)
-should be listed with a '*' in the first column. People who have 
-contributed from an organization can be listed under the organization
-that actually holds the copyright for their contributions (see the 
-Microsoft organization for an example). Those individuals should have
-their names indented and be marked with a '-'
+这是 Orchard 项目贡献者的官方列表。
+原始版权所有人 (个人或机构) 的姓名应在第一栏内以 '*' 号列明。在组织中做出贡献的人员可以列在实际拥有其贡献版权的组织下 (参见 Microsoft 组织的示例)。这些人士的姓名须缩进及加上 '-' 号
  
 
 * Nick Mayne (@Jetski5822)

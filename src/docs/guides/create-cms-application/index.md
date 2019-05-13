@@ -1,13 +1,13 @@
-# Creating an Orchard Core CMS website
+# 创建一个 Orchard Core CMS 网站
 
-In this guide you will setup Orchard Core as a Content Management System from a project template.
+在本指南中，你将从项目模板开始将 Orchard Core 安装为内容管理系统。
 
-## What you will need
+## 你需要什么
 
 - The current version of the .NET Core SDK. You can download it from here [https://www.microsoft.com/net/download/core](https://www.microsoft.com/net/download/core).
 - A text editor and a terminal where you can type dotnet commands.
 
-## Creating the projects
+## 创建项目
 
 There are different ways to create sites and modules for Orchard Core. You can learn more about them [here](../../templates/README.md). In this guide we will use our "Code Generation Templates".
 
@@ -24,7 +24,7 @@ Create an empty folder that will contain your site. Open a terminal, navigate to
 
 This creates a new Ochard Core CMS project in a folder named `MySite`.
 
-## Setting up the site
+## 启动站点
 
 The application has been created by the template, but it has not been setup yet.
 
@@ -57,6 +57,6 @@ Submit the form. A few seconds later you should be looking at a Blog Site.
 
 In order to configure it and start writing content you can go to <https://localhost:5001/admin>.
 
-## Summary
+## 总结
 
-You just created an Orchard Core CMS powered blog engine.
+你刚刚创建了一个 Orchard Core CMS 支持的博客引擎。

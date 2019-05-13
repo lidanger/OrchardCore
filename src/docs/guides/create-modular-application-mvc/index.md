@@ -1,17 +1,16 @@
-# Creating a modular ASP.NET Core application
+# 创建一个模块化 ASP.NET Core 应用程序
 
-## What you will build
+## 你将构建什么
 
-You will build an application that is made of modules. The module will provide a Controller and a View while the Layout will
-be provided by the main application project.
+你将构建一个由模块组成的应用程序。模块将提供控制器和视图，而布局将由主应用程序项目提供。
 
-## What you will need
+## 你需要什么
 
 - The current version of the .NET Core SDK. You can download it from here [https://www.microsoft.com/net/download/core](https://www.microsoft.com/net/download/core).
 
 - A text editor and a terminal where you can type dotnet commands.
 
-## Creating an Orchard Core site and module
+## 创建一个 Orchard Core 站点和模块
 
 There are different ways to create sites and modules for Orchard Core. You can learn more about them [here](../../templates/README.md). In this guide we will use our "Code Generation Templates".
 
@@ -36,7 +35,7 @@ The next step is to reference the module from the application, by adding a proje
 
 ```dotnet add MySite reference MyModule```
 
-## Testing the resulting application
+## 测试最终的应用程序
 
 From the root of the folder containing both projects, run this command:
 
@@ -58,7 +57,7 @@ It should display __Hello from MyModule__
 
 > The Layout is coming from the main application project, while the controller, action and view are coming from the module project.
 
-## Registering a custom route
+## 注册自定义路由
 
 By default all routes in modules are modeled like `{area}/{controller}/{action}` where `{area}` is the name of the module.
 We will change the route of the view in this module to handle the home page.
@@ -76,6 +75,6 @@ In the `Startup.cs` file of `MyModule`, add this code in the `Configure()` metho
 
 Restart the application and open the home page, which should display the same result as with the previous url.
 
-## Summary
+## 总结
 
-You just created an ASP.NET Core application with a module containing a Controller and a View.
+你刚刚通过一个包含控制器和视图的模块创建了一个 ASP.NET Core 应用程序。

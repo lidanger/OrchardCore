@@ -1,19 +1,19 @@
-# Adding a Menu Item to the Admin Navigation from a Module
+# 从模块向 Admin 导航添加菜单项
 
 The `INavigationProvider` interface is the entry point to every task related to handling admin navigation menu items.
 In order to add menu items from your module you just need to create a class that implements that interface.
 
-## What you will build
+## 你将构建什么
 
 You will build a module that will add a menu item at the root level and two child menu items.
 Each menu item will point to its own view.
 
-## What you will need
+## 你需要什么
 
 - The current version of the .NET Core SDK. You can download it from here https://www.microsoft.com/net/download/core.
 - A text editor and a terminal where you can type dotnet commands.
 
-## Creating an Orchard Core CMS site and module
+## 创建一个 Orchard Core CMS 站点和模块
 
 There are different ways to create sites and modules for Orchard Core. You can learn more about them [here](../../templates/README.md). In this guide we will use our "Code Generation Templates".
 
@@ -45,9 +45,9 @@ We also need a reference to the `OrchardCore.Admin` package in order to be able 
 !!! note
     To use the development branch of the template add ` --source https://www.myget.org/F/orchardcore-preview/api/v3/index.json --version 1.0.0-*`
 
-## Adding our controller and views
+## 添加我们的控制器和视图
 
-### Adding the controller
+### 添加控制器
 
 Create a `DemoNavController.cs` file to the `.\MyModule\Controllers` folder, with these contents:
 
@@ -84,7 +84,7 @@ namespace MyModule.Controllers
    The `[Admin]` attribute ensures the controller is using the Admin theme and users have the permission to access it.
    Another way to have this behavior would have been to name this class `AdminController`.
 
-### Adding the views
+### 添加视图
 
 Create a folder `.\MyModule\Views\DemoNav`, and add to it these two files:
 
@@ -100,7 +100,7 @@ Create a folder `.\MyModule\Views\DemoNav`, and add to it these two files:
 <p>View Two</p>
 ```
 
-## Adding the menu items ##
+## 添加菜单项 ##
 
 Now you just need to add a class that implements `INavigationProvider` interface.
 By convention, we call these classes `AdminMenu.cs` and put it in the root of our module's folder.
@@ -161,7 +161,7 @@ Add this line to the `ConfigureServices()` method:
 services.AddScoped<INavigationProvider, AdminMenu>();
 ```
 
-## Testing the resulting application
+## 测试最终的应用程序
 
 From the root of the folder containing both projects, run this command:
 
@@ -191,6 +191,6 @@ Using the left menu go to __Configuration: Modules__, search for your module, __
 Now your module is enabled and you should see a new entry on the admin.
 Click on the new menu items to render the Views we created earlier.
 
-## Summary
+## 总结
 
-You just learned how to add menu items to the Admin Navigation.
+你刚刚学习了如何将菜单项添加到 Admin 导航中。

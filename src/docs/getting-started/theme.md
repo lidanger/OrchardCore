@@ -1,19 +1,19 @@
-# Getting started with an Orchard Core Theme
+# Orchard Core 主题入门指南
 
-In this article, we are going to create an Orchard Core Theme by adding it to an existing Orchard Core CMS application [created previously](README).
+在本文中，我们将通过将 Orchard Core 主题添加到现有的[以前创建的](README) Orchard Core CMS 应用程序中来创建它。
 
-## Create an Orchard Core Theme
+## 创建一个 Orchard Core 主题
 
-- Install the [Code Generation Templates](../../Templates/README) 
-- Create a folder with the name of your theme (Ex: `MyTheme.OrchardCore`) and open it
-- Execute the command `dotnet new octheme`
-- Add a reference to the theme from the main Orchard Core CMS Web application
+- 安装[代码生成模板](../../Templates/README) 
+- 创建一个名为你的主题 (Ex: `MyTheme.OrchardCore`) 的文件夹并打开它
+- 执行命令 `dotnet new octheme`
+- 从主 Orchard Core CMS Web 应用程序中添加对主题的引用
 
-A thumbnail can also be created by adding a `Theme.png` in the `wwwwroot` folder.
+缩略图也可以通过添加 `wwwwroot` 文件夹中的 `Theme.png` 来创建。
 
 ![image](assets/MyTheme.png)
 
-The properties of the theme can be changed in the __Manifest.cs__ file:
+主题的属性可在 __Manifest.cs__ 文件中更改:
 
 ```csharp
 using OrchardCore.DisplayManagement.Manifest;
@@ -27,4 +27,4 @@ using OrchardCore.DisplayManagement.Manifest;
 )]
 ```
 
-The theme should be available in the `Active themes` admin page, and can be set as the default theme.
+主题应该在 `Active themes` 管理页面中可用，并且可以设置为默认主题。

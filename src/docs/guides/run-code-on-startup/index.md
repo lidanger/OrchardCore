@@ -1,16 +1,13 @@
-# How to run tasks on application startup from a module
+# 如何在应用程序启动时从模块运行任务
 
-The `Startup` classes are used to initialize the services and piece of middleware. 
-They are called when a tenant is initialized.
+`Startup` 类用于初始化服务和中间件。 
+在初始化租户时调用它们。
 
-The interface `OrchardCore.ModulesIModularTenantEvents` provides a way to define user code that will 
-be executed when the tenant is first hit (tentant activation).
+`OrchardCore.ModulesIModularTenantEvents` 接口提供了一种方法来定义用户代码，这些代码将在第一次命中租户时执行 (临时激活)。
 
-All tenants are lazy-loaded, meaning that when the app starts the event handlers are 
-not invoked. They are instead called when the first request is processed.
+所有租户都是惰性加载的，这意味着当应用程序启动时，不会调用事件处理程序。而是在处理第一个请求时调用它们。
 
-In the following example the class `MyStartupTaskService` inherits from `ModularTenantEvents` 
-to implement `IModularTenantEvents`.
+在下面的示例中，类 `MyStartupTaskService` 继承 `ModularTenantEvents` 来实现 `IModularTenantEvents`。
 
 ```csharp
 
@@ -37,11 +34,10 @@ public class MyStartupTaskService : ModularTenantEvents
 }
 ```
 
-Then this class is registered on the `ConfigureServices()` method of the module's __Startup.cs__ file.
+然后这个类在模块的 __Startup.cs__ 文件的 `ConfigureServices()` 方法中注册。
 
 ```csharp
 services.AddScoped<IModularTenantEvents, MyStartupTaskService>();
 ```
 
-> NB: `ActivatingAsync` events are invoked in the order of their registration, which is derived from
-the modules dependency graph. The `ActivatedAsync` events are invoked in the reverse order.
+> 注意: `ActivatingAsync` 事件是按照它们的注册顺序调用的，该顺序源自模块依赖关系图。以相反的顺序调用 `ActivatedAsync` 时间。

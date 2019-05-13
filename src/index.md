@@ -1,97 +1,97 @@
 # Orchard Core
 
-Orchard Core is a redevelopment of [Orchard CMS](https://github.com/OrchardCMS/Orchard) on [ASP.NET Core](https://docs.microsoft.com/aspnet/core/). 
+Orchard Core 是对 [ASP.NET Core](https://docs.microsoft.com/aspnet/core/) 上的 [Orchard CMS](https://github.com/OrchardCMS/Orchard) 的重新开发。 
 
-Orchard Core consists of two different targets:
+Orchard Core 包括两个不同的目标:
 
-- **Orchard Core Framework**: An application framework for building **modular**, **multi-tenant** applications on ASP.NET Core.
-- **Orchard Core CMS**: A Web Content Management System (CMS) built on top of the Orchard Core Framework.
+- **Orchard Core 框架**: 一个用于在 ASP.NET Core 上构建**模块化**、**多租户**应用程序的框架。
+- **Orchard Core CMS**: 建立在 Orchard Core 框架之上的 Web 内容管理系统 (CMS).
 
-It’s important to note the differences between the framework and the CMS. Some developers who want to develop SaaS applications will only be interested in the modular framework. Others who want to build administrable websites will focus on the CMS and build modules to enhance their sites or the whole ecosystem.
+重要的是要注意框架和 CMS 之间的区别。一些希望开发 SaaS 应用程序的开发人员只对模块化框架感兴趣。其他想要构建可管理网站的人将关注 CMS 并构建模块来增强他们的网站或整个生态系统。
 
 [![Join the chat at https://gitter.im/OrchardCMS/OrchardCore](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/OrchardCMS/OrchardCore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![BSD-3-Clause License](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)](https://github.com/OrchardCMS/OrchardCore/blob/master/LICENSE)
 [![Documentation](https://readthedocs.org/projects/orchardcore/badge/)](https://orchardcore.readthedocs.io/en/latest/)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/orchard-core/localized.svg)](https://crowdin.com/project/orchard-core)
 
-## Building Software as a Service (SaaS) solutions with the Orchard Core Framework
+## 使用 Orchard Core 框架构建软件即服务 (SaaS) 解决方案
 
-It’s very important to understand the Orchard Core Framework is distributed independently from the CMS on nuget.org. We’ve made some sample applications on <https://github.com/OrchardCMS/OrchardCore.Samples> that will guide you on how to build **modular** and **multi-tenant** applications using just Orchard Core Framework without any of the CMS specific features.
+理解 Orchard Core 框架独立于 nuget.org 上的 CMS 是非常重要的。我们在 <https://github.com/OrchardCMS/OrchardCore.Samples> 上创建了一些示例应用程序，它们将指导你如何使用 Orchard Core 框架构建**模块化**和**多租户**应用程序，而不使用任何 CMS 的特定功能。
 
-One of our goals is to enable community-based ecosystems of hosted applications which can be extended with modules, like e-commerce systems, blog engines and more. The Orchard Core Framework enables a modular environment that allows different teams to work on separate parts of an application and make components reusable across projects.
+我们的目标之一是支持托管应用程序的基于社区的生态系统，这些应用程序可以通过模块 (如电子商务系统、博客引擎等) 进行扩展。Orchard Core 框架支持模块化环境，允许不同的团队处理应用程序的不同部分，并使组件可以跨项目重用。
 
-## Building Website with Orchard Core CMS
+## 使用 Orchard Core CMS 构建网站
 
-Orchard Core CMS is a complete rewrite of Orchard CMS on ASP.NET Core. It’s not just a port as we wanted to improve the performance drastically and align as close as possible to the development models of ASP.NET Core.
+Orchard Core CMS 是 Orchard CMS 在 ASP.NET Core 上的完整重写。它并不只是简单搬运，因为我们希望大幅度提高性能，并尽可能地与 ASP.NET Core 的开发模型保持一致。
 
-- **Performance**. This might the most obvious change when you start using Orchard Core CMS. It’s extremely fast for a CMS. So fast that we haven’t even cared about working on an output cache module. To give you an idea, without caching Orchard Core CMS is around 20 times faster than the previous version.
+- **性能**。这可能是开始使用 Orchard Core CMS 时最明显的变化。这对于 CMS 来说是非常快的。速度如此之快，以至于我们甚至不关心如何处理输出缓存模块。为了让你了解一下，如果没有缓存 Orchard Core CMS，其速度大约是以前版本的 20 倍。
 
-- **Portable**. You can now develop and deploy Orchard Core CMS on Windows, Linux and macOS. We also have Docker images ready for use.
+- **可移植**。现在可以在 Windows、Linux 和 macOS 上开发和部署 Orchard Core CMS。我们也有 Docker 镜像准备使用。
 
-- **Document database** abstraction. Orchard Core CMS still requires a relational database, and is compatible with SQL Server, MySQL, PostgreSQL and SQLite, but it’s now using a document abstraction (YesSql) that provides a document database API to store and query documents. This is a much better approach for CMS systems and helps performance significantly.
+- **文档数据库**抽象。Orchard Core CMS 仍然需要一个关系数据库，并且兼容 SQL Server、MySQL、PostgreSQL 和 SQLite，但是现在它使用了一个文档抽象 (YesSql)，它提供了一个文档数据库 API 来存储和查询文档。对于 CMS 系统来说，这是一种更好的方法，可以显著提高性能。
 
-- **NuGet Packages**. Modules and themes are now shared as NuGet packages. Creating a new website with Orchard Core CMS is actually as simple as referencing a single meta package from the NuGet gallery. It also means that updating to a newer version only involves updating the version number of this package.
+- **NuGet 包**。模块和主题现在以 NuGet 包形式共享。使用 Orchard Core CMS 创建一个新网站实际上非常简单，只需从 NuGet gallery 中引用一个元包即可。它还意味着更新到一个较新的版本只需要更新这个包的版本号。
 
-- **Live preview**. When editing a content item, you can now see live how it will look like on your site, even before saving your content. And it also works for templates, where you can browse any page to inspect the impact of a change on templates as you type it.
+- **实时预览**。当编辑内容项时，你现在可以实时看到它在站点上的样子，甚至在保存内容之前也是如此。它也适用于模板，你可以浏览任何页面，在键入模板时检查更改对模板的影响。
 
-- **Liquid templates support**. Editors can safely change the HTML templates with the Liquid template language. It was chosen as it’s both very well documented (Jekyll, Shopify, …) and secure.
+- **支撑 Liquid 模板**。编辑器可以安全地使用 Liquid 模板语言更改 HTML 模板。之所以选择它，是因为它有很好的文档 (Jekyll, Shopify，…) 和安全性。
 
-- **Custom queries**. We wanted to provide a way for developers to access all their data as simply as possible. We created a module that lets you create custom ad-hoc SQL and Lucene queries that can be re-used to display custom content, or exposed as API endpoints. You can use it to create efficient queries, or expose your data to SPA applications.
+- **自定义查询**。我们希望为开发人员提供一种尽可能简单地访问所有数据的方法。我们创建了一个模块，该模块允许你创建自定义的 ad-hoc SQL 和 Lucene 查询，这些查询可以被重用来显示自定义内容，或者作为 API 端点公开。你可以使用它来创建有效的查询，或者将数据公开给 SPA 应用程序。
 
-- **Deployment plans**. Deployment plans are scripts that can contain content and metadata to build a website. You can now include binary files, and even use them to deploy your sites remotely from a staging to a production environment for instance. They can also be part of NuGet Packages, allowing you to ship predefined websites.
+- **部署计划**。部署计划是可以包含构建网站的内容和元数据的脚本。现在可以包含二进制文件，例如，甚至可以使用它们将站点从临时场所远程部署到生产环境。它们也可以是 NuGet 包的一部分，使你可以发布预定义的网站。
 
-- **Scalability**. Because Orchard Core is a multi-tenant system, you can host as many websites as you want with a single deployment. A typical cloud machine can then host thousands of sites in parallel, with database, content, theme and user isolation.
+- **可伸缩性**。因为 Orchard Core 是一个多租户系统，你可以通过一个部署来托管任意数量的网站。然后，一台典型的云计算机可以并行地承载数千个站点，包括数据库、内容、主题和用户隔离。
 
-- **Workflows**. Create content approval workflows, react to webhooks, take actions when forms are submitted, and any other process you'd like to implement with a user friendly UI.
+- **工作流**。创建内容审批工作流、对 webhook 做出反应、在提交表单时采取行动，以及你希望通过用户友好的 UI 实现的任何其他流程。
 
-- **GraphQL**. We provide a very flexible GraphQL API, such that any authorized external application can reuse your content, like SPA applications or static site generators.
+- **GraphQL**。我们提供了一个非常灵活的 GraphQL API，这样任何经过授权的外部应用程序都可以重用你的内容，比如 SPA 应用程序或静态站点生成器。
 
-### Different website building strategies
+### 不同的网站构建策略
 
-Orchard Core CMS supports all major site building strategies:
+Orchard Core CMS 支持所有主要站点建设策略:
 
-- **Full CMS**. In this mode, the website uses a theme and templates to render your content, aiming for little to no custom development at all.
+- **Full CMS**。在这种模式下，网站使用主题和模板来呈现内容，目标是很少或根本没有定制开发。
 
-- **Decoupled CMS**. The site starts off blank, apart from the content management back-end. You create all the templates you need with Razor Pages or MVC actions and access your content via the content services.
+- **Decoupled CMS**。除了内容管理后端之外，站点一开始是空白的。你可以使用 Razor 页面或 MVC 操作创建所需的所有模板，并通过内容服务访问内容。
 
-- **Headless CMS**. The site only manages the content, and you create a separate application that will fetch the managed content using GraphQL or REST APIs.
+- **Headless CMS**。站点只管理内容，你可以创建一个单独的应用程序，该应用程序将使用 GraphQL 或 REST Api 获取托管内容。
 
-## Status
+## 状态
 
-The latest released version of Orchard Core is `1.0.0-beta3`.
-The release notes can be found on <https://github.com/OrchardCMS/OrchardCore/releases/tag/1.0.0-beta3>
+最新发布的 Orchard Core 版本是 `1.0.0-beta3`。
+发布说明可以在 <https://github.com/OrchardCMS/OrchardCore/releases/tag/1.0.0-beta3> 找到
 
-The software is complete enough for external testing -- that is, by groups outside the organization or community that developed the software. Beta software is usually feature complete, but may have known limitations or bugs. Betas are either closed (private) and limited to a specific set of users, or they can be open to the general public.
+软件已经足够完成外部测试——也就是说，由开发软件的组织或社区之外的小组进行测试。Beta 版软件通常功能齐全，但可能有已知的限制或缺陷。Beta 版本要么是封闭的(私有的)，并且仅限于特定的一组用户，要么是向公众开放的。
 
-Here is a more detailed [roadmap](https://github.com/OrchardCMS/OrchardCore/wiki/Roadmap).
+这里是更详细的[路线图](https://github.com/OrchardCMS/OrchardCore/wiki/Roadmap).
 
-## Getting Started
+## 入门指南
 
-- Clone the repository using the command `git clone https://github.com/OrchardCMS/OrchardCore.git` and checkout the `master` branch for the latest release, or the `dev` branch for the cutting-edge version.
+- 使用命令 `git clone https://github.com/OrchardCMS/OrchardCore.git` 克隆存储库，并检出 `master` 分支来获取最新版本，或者检出 `dev` 分支来获取 cutting-edge 版本。
 
-- Watch the ASP.NET Community Standup video where Orchard Core was demonstrated: <https://www.youtube.com/watch?v=HeDjv3blBjQ&t=2246s&list=PL1rZQsJPBU2StolNg0aqvQswETPcYnNKL&index=24> 
+- 观看展示 Orchard Core 的 ASP.NET Community Standup 视频: <https://www.youtube.com/watch?v=HeDjv3blBjQ&t=2246s&list=PL1rZQsJPBU2StolNg0aqvQswETPcYnNKL&index=24> 
 
-- Follow the samples on <https://github.com/OrchardCMS/OrchardCore.Samples> that will guide you on how to build **modular** and **multi-tenant** applications
+- 跟随 <https://github.com/OrchardCMS/OrchardCore.Samples> 上的示例，该示例将指导你如何构建**模块化**和**多租户**应用程序
 
-- Follow the tutorial inside the [Training Demo Module](https://github.com/Lombiq/Orchard-Training-Demo-Module) to learn how to develop Orchard Core modules.
+- 跟随 [Training Demo Module](https://github.com/Lombiq/Orchard-Training-Demo-Module) 中的教程学习如何开发 Orchard Core 模块。
 
-### Command line
+### 命令行
 
-- Install the latest version of the .NET Core SDK from this page <https://www.microsoft.com/net/download/core>
-- Call `dotnet build`.
-- Next, navigate to `D:\OrchardCore\src\OrchardCore.Cms.Web` or wherever your folder is on the commandline in Administrator mode.
-- Call `dotnet run`.
-- Then open the `http://localhost:5000` URL in your browser.
+- 安装来自这个页面 <https://www.microsoft.com/net/download/core> 的 .NET Core SDK 的最新版本 
+- 调用 `dotnet build`。
+- 下一步，导航到 `D:\OrchardCore\src\OrchardCore.Cms.Web` 或任何你可以打开管理员模式命令行的文件夹。
+- 调用 `dotnet run`。
+- 然后在你的浏览器中打开 URL `http://localhost:5000`。
 
-You can also read the [Code Generation Templates documentation](Templates/README) to create new applications from predefined templates.
+你还可以阅读[代码生成模板文档](Templates/README)，从预定义的模板创建新应用程序。
 
 ### Visual Studio 2017
 
-- Download Visual Studio 2017 (any edition) from <https://www.visualstudio.com/downloads/>.
-- Open `OrchardCore.sln` and wait for Visual Studio to restore all Nuget packages.
-- Ensure `OrchardCore.Cms.Web` is the startup project and run it.
-- Optionally install the [Lombiq Orchard Visual Studio Extension](https://marketplace.visualstudio.com/items?itemName=LombiqVisualStudioExtension.LombiqOrchardVisualStudioExtension) to add some useful utilities to your Visual Studio such as an error log watcher or a dependency injector.
+- 从 <https://www.visualstudio.com/downloads/> 下载 Visual Studio 2017 (任何版本)。
+- 打开 `OrchardCore.sln` 然后等待 Visual Studio 恢复所有 Nuget 包。
+- 确保 `OrchardCore.Cms.Web` 是启动项目，并运行它。
+- 可以选择安装 [Lombiq Orchard Visual Studio Extension](https://marketplace.visualstudio.com/items?itemName=LombiqVisualStudioExtension.LombiqOrchardVisualStudioExtension)，向 Visual Studio 添加一些有用的实用程序，比如错误日志监视程序或依赖注入器。
 
-### Contributing
+### 贡献代码
 
-We currently follow these [engineering guidelines](https://github.com/OrchardCMS/OrchardCore/wiki/Engineering-Guidelines).
+我们目前遵循这些[工程指南](https://github.com/OrchardCMS/OrchardCore/wiki/Engineering-Guidelines)。
