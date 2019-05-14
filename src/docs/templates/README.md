@@ -20,7 +20,7 @@ dotnet new -i OrchardCore.ProjectTemplates::1.0.0-beta3-* --nuget-source https:/
 
 ## 创建一个新网站
 
-### 在命令 Shell 在 (自动方式)
+### 在命令 Shell 中 (自动方式)
 
 #### 生成一个 Orchard Cms Web 应用程序
 

@@ -4,38 +4,38 @@
 
 ## 你需要什么
 
-- The current version of the .NET Core SDK. You can download it from here [https://www.microsoft.com/net/download/core](https://www.microsoft.com/net/download/core).
-- A text editor and a terminal where you can type dotnet commands.
+- .NET Core SDK 的当前版本。你可以从这里下载 [https://www.microsoft.com/net/download/core](https://www.microsoft.com/net/download/core)。
+- 文本编辑器和终端，你可以在其中键入 dotnet 命令。
 
 ## 创建项目
 
-There are different ways to create sites and modules for Orchard Core. You can learn more about them [here](../../templates/README.md). In this guide we will use our "Code Generation Templates".
+有不同的方法为 Orchard Core 创建站点和模块。你可以在[这里](../../templates/README.md)了解更多。在本指南中，我们将使用 “代码生成模板”。
 
-You can install the latest released templates using this command:
+你可以使用以下命令安装最新发布的模板:
 
 ```dotnet new -i OrchardCore.ProjectTemplates::1.0.0-*```
 
-!!! note
-    To use the development branch of the template add `--nuget-source https://www.myget.org/F/orchardcore-preview/api/v3/index.json`
+!!! 注意
+    要使用模板的开发分支，添加 `--nuget-source https://www.myget.org/F/orchardcore-preview/api/v3/index.json`
 
-Create an empty folder that will contain your site. Open a terminal, navigate to that folder and run this:
+创建一个包含站点的空文件夹。打开终端，导航到该文件夹并运行如下操作:
 
 ```dotnet new occms -n MySite```
 
-This creates a new Ochard Core CMS project in a folder named `MySite`.
+这将在名为 `MySite` 的文件夹中创建一个新的 Orchard Core CMS 项目。
 
 ## 启动站点
 
-The application has been created by the template, but it has not been setup yet.
+已经通过模板创建了应用程序，但是还没有安装。
 
-Run the application by executing this command:
+执行以下命令运行应用程序:
 
 `dotnet run --project .\MySite\MySite.csproj`
 
-!!! note
-    If you are using the development branch of the templates, run `dotnet restore .\MySite\MySite.csproj --source https://www.myget.org/F/orchardcore-preview/api/v3/index.json` before running the application
+!!! 注意
+    如果你在使用模板的开发分支，在运行应用程序前执行 `dotnet restore .\MySite\MySite.csproj --source https://www.myget.org/F/orchardcore-preview/api/v3/index.json`
 
-Your application should now be running and contain the open ports:
+你的应用程序现在应该正在运行，并包含开放的端口:
 
 ```
 Now listening on: https://localhost:5001
@@ -43,19 +43,19 @@ Now listening on: http://localhost:5000
 Application started. Press Ctrl+C to shut down.
 ```
 
-Open a browser on <https://localhost:5001>, it should display the setup screen.
+在浏览器中打开 <https://localhost:5001>，应该会显示安装界面。
 
-In order to build a site with all the features of a CMS with are going to use the __Blog__ recipe. Recipes contains a list of modules and steps to configure an Orchard Core website.
+为了构建一个具有所有 CMS 特性的网站，都要使用 __Blog__ recipe。recipe 包含一个模块列表和配置 Orchard Core 网站的步骤。
 
-Fill the form and select the __Blog__ recipe and __SQLite__ for the database.
+填写表单，选择 __Blog__ recipe，对于数据库选择 __SQLite__。
 
 ![image](assets/setup-screen.jpg)
 
-Submit the form. A few seconds later you should be looking at a Blog Site.
+提交表单。几秒钟后，你应该会看到一个博客站点。
 
 ![image](assets/blog-home-page.jpg)
 
-In order to configure it and start writing content you can go to <https://localhost:5001/admin>.
+为了配置它并开始编写内容，你可以访问 <https://localhost:5001/admin>.
 
 ## 总结
 

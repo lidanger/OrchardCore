@@ -2,7 +2,7 @@
 
 Orchard Core 包括两个不同的项目:
 
-- __Orchard Core Framework__: 一个用于在 ASP.NET Core 上构建模块化、多租户应用程序的框架。
+- __Orchard Core 框架__: 一个用于在 ASP.NET Core 上构建模块化、多租户应用程序的框架。
 - __Orchard Core CMS__: 建立在 Orchard Core 框架之上的 Web 内容管理系统 (CMS)。
 
 [![Join the chat at https://gitter.im/OrchardCMS/OrchardCore](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/OrchardCMS/OrchardCore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
