@@ -22,7 +22,7 @@ Orchard Core 包括两个不同的目标:
 
 ## 使用 Orchard Core CMS 构建网站
 
-Orchard Core CMS 是 Orchard CMS 在 ASP.NET Core 上的完整重写。它并不只是简单搬运，因为我们希望大幅度提高性能，并尽可能地与 ASP.NET Core 的开发模型保持一致。
+Orchard Core CMS 是 Orchard CMS 在 ASP.NET Core 上的完整重写。它并不只是简单移植，因为我们希望大幅度提高性能，并尽可能地与 ASP.NET Core 的开发模型保持一致。
 
 - **性能**。这可能是开始使用 Orchard Core CMS 时最明显的变化。这对于 CMS 来说是非常快的。速度如此之快，以至于我们甚至不关心如何处理输出缓存模块。为了让你了解一下，如果没有缓存 Orchard Core CMS，其速度大约是以前版本的 20 倍。
 
